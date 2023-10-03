@@ -1,4 +1,5 @@
-
+// we consider 1st element as in sorted order and rest as unsorted element
+// we take each element and compare with left sorted elements and keep this element in correct position in left sorted elements
 function insertionSort(arr) {
 
     for (let i = 1; i < arr.length; i++) {

@@ -1,0 +1,82 @@
+ 
+   introduction to data structures in javascript
+   
+   Built in data structures
+   -> Arrays
+   ->Objects
+   ->Sets
+   ->Maps
+   
+   Custom data Structures
+   ->Stacks
+   ->Queues
+   ->Circular Queues
+   ->Linked List
+   ->Hash table
+   ->Trees
+   ->Graphs
+   
+   ===Arrays====
+   -> An array is a data structure that can hold a collection of values
+   -> Arrays can contains a mix of different data types.You can store strings,booleans,numbers or even objects all in the same array
+   -> Arrays are resizable.You dont have to declare the size of an array  before creating it.
+   ->javascript arrays are iterables.They can be used with a for of loop
+   
+   Arrays-Big-o time complexity
+   -- insert/ remove from the end - O(1)
+   -- insert / remove from beginning - O(n)
+   -- Access - O(1)
+   --Search - O(n)
+   --Push / pop - O(1)
+   -- Shift / unshift / concat / slice / splice - O(n)
+   -- forEach / map / filter / reduce -O(n)
+   
+   ===Objects===
+   ->An object is an unordered collection of key-value pairs. The key must either be a string or symbol data type where as the value can be of any data type.
+   ->To retrieve a value, you can use the corresponding key. This can be achieve using dot notation or bracket notation.
+   -> An Object is not an iterable. You cannot use it with a for of loop
+   
+   Object -Big-O time complexity
+   -- insert -O(1)
+   -- Remove -O(1)
+   -- Access - O(1)
+   -- Search - O(n)
+   -- Object.keys() - O(n)
+   -- Object.values() - O(n)
+   -- Object.entries() - O(n)
+   
+   ===Set===
+   ->A set is a data structure that can hold a collection of values.The values however must be unique
+   ->Set can contain a mix of different data types. You can store strings,booleans,numbers or even objects all in the same set
+   ->Sets are dynamically sized. You dont have to decleare the size of a set before creating it
+   ->Sets do not maintains insertion order
+   ->Sets are iterables. They can be used with a for of loop.
+   
+   ===Set vs Arrays ===
+   ->Arrays can contain duplicate values whereas Sets cannot
+   ->insertion order is maintained in arrays but it is not the case with sets
+   ->Searching and deleting an element in the set is faster compared to arrays.
+   
+   ===Map===
+   ->A map is an unordered collection of key-value pairs.Both keys and values can be of any data type.
+   ->To retrieve a value, you can use the corresponding key.
+   ->Maps are iterables. They can be used with a for of loop.
+   
+   ===Object vs Map===
+   ->Objects are unordered whereas maps are ordered.
+   ->Keys in objects can only be string or symbol type whereas in maps,they can be of any type.
+   ->An objects can has a prototype and may contain a few default keys which may collide with your own keys if you are not careful. A map on the other hand does not contains any keys by default.
+   ->Objects are not iterables where as maps are iterables.
+   ->The numbers of items in an object must be determined manually where as it is readily available with the size property in map.
+   ->Apart from storing data you can attach functionality to an object whereas maps are restricted to just storing data.
+   
+   Map example:
+   const map = new Map([['a',1],['b',2]])
+  map.set('c',3)
+  map.delete('c')
+console.log("size:",map.size)  // 2
+console.log("map.has::",map.has('a'))  // true
+for(const [key,value] of map){
+	console.log(`${key}:${value}`);  // a:1
+	                                             // b:2
+}

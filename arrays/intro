@@ -1,0 +1,15 @@
+Array Big(O) timecomplexity
+
+insert / remove from the end - O(1)
+
+insert / remove from the begining - O(n)
+
+Access - O(1)
+
+Search - O(n)
+
+push / pop - O(1)
+
+shift / unshift /concat / slice / splice - O(n)
+
+forEach / map / filter / reduce -O(n)

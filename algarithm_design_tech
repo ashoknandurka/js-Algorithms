@@ -1,0 +1,20 @@
+
+=> Bruce force :
+simple and exhaustive technique that evaualtes every possible out come to find the best solution
+Ex: linear search.
+
+=> Greedy :
+Choose the best option at the current time,Without any consideration for the future
+Ex: Dijkstra's,Prim's,Kruskal's algarithm.
+
+=> Divide and Conquer :
+Divide the Problem into smaller subproblems.Each subproblem is then solved and the partial solutions are recombined to determine the overall solution.
+Ex: Binary search,Quick sort,Merge sort and Tower Of Hanoi
+
+=> Dynamic Programming :
+Divide the Problem into smaller subproblems.Break it down into smaller but overlaping subproblems.store the result and reuse it for the same sub-problems.This is called memoization and is an optimisation technique that improves the time complexity of your algarithm
+Ex: fibonacci series and climbing staires.
+
+=> Backtracking :
+Generate all possible solutions.Check if the solution satisfies all the given constrains and only then you proceed with generating subsequent solutions. if the constraints are not satisfied,backtrack and go on different path to find solution 
+Ex: N-queens problems 

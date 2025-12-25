@@ -58,7 +58,7 @@
    ->Searching and deleting an element in the set is faster compared to arrays.
    
    ===Map===
-   ->A map is an unordered collection of key-value pairs.Both keys and values can be of any data type.
+   ->A map is an ordered collection of key-value pairs.Both keys and values can be of any data type.
    ->To retrieve a value, you can use the corresponding key.
    ->Maps are iterables. They can be used with a for of loop.
    

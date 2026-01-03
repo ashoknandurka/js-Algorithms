@@ -2,17 +2,20 @@
 
 // Write a method to check if given input value is Object or an Array without using isArray predefined  method?
 
-function objOrArrayCheck(value){
-  
-    if(value.__proto__ === Object.prototype){
-      return 'Object'
-    }else{
-      return 'Array'
-    }
+
+  function checkType(value){
+    if(value && value.constructor === Array) return 'Array';
+    if(value && value.constructor === Object) return 'Object';
   }
-  
-  let arr = [1,2,3]
-  let obj = {'name':'ashok'}
-  
-  console.log(objOrArrayCheck(arr))
-  console.log(objOrArrayCheck(obj))
+
+  console.log(checkType([1,2,3]))
+  console.log(checkType({'name':'ashok'}))
+
+/* What NOT to Use (If Interviewer Says “No Predefined”)
+
+Array.isArray()
+
+Object.prototype.toString.call()
+
+Object.getPrototypeOf() 
+ */

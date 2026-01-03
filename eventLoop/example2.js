@@ -7,9 +7,11 @@ async function a() {
     });
     queueMicrotask(() => console.log('g'))
     promise.then(res => console.log(res));
-    const res = await promise;
+    const res = await promise; // function a() waits here and exiquites microtask queue
     console.log(res);
     setTimeout(() => console.log('f'));
     console.log('d')
   }
   a();
+
+  // a,b,g,c,c,d,e,f

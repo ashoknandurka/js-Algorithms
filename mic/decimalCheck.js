@@ -1,4 +1,3 @@
-
 /* How would you check if a number is an integer, Write the definition of method isInt given below?
 
 function isInt(num) {}
@@ -8,30 +7,30 @@ console.log(isInt(0.3)); // false
 console.log(isInt(4.0)); // true
 */
 
-function isInt(num){
-    let str = JSON.stringify(num)
-  
-    let numberArray = str.split('')
-   
-    let indexOfDot = numberArray.findIndex((item)=> item === '.')
-  
-    let decimalArray = numberArray.slice(indexOfDot + 1)
-  
-    let sum = decimalArray.reduce((acc,curr)=>{
-        acc = acc + JSON.parse(curr);
-        return acc; 
-    },0)
-  
-    if(str.includes('.') && sum > 0){
-        return false
-    }else{
-        return true
-    }
+function isInt(num) {
+  let str = JSON.stringify(num);
+
+  let numberArray = str.split("");
+
+  let indexOfDot = numberArray.findIndex((item) => item === ".");
+
+  let decimalArray = numberArray.slice(indexOfDot + 1);
+
+  let sum = decimalArray.reduce((acc, curr) => {
+    acc = acc + JSON.parse(curr);
+    return acc;
+  }, 0);
+
+  if (str.includes(".") && sum > 0) {
+    return false;
+  } else {
+    return true;
+  }
 }
 
-console.log(isInt(4.2))
-console.log(isInt(4.0))
-console.log(isInt(4))
+console.log(isInt(4.2));
+console.log(isInt(4.0));
+console.log(isInt(4));
 
 // standard Method 2
 

@@ -15,6 +15,14 @@
    ->Hash table
    ->Trees
    ->Graphs
+
+   ⏱️ Time Complexity
+
+👉 How the execution time grows as input size (n) grows.
+
+💾 Space Complexity
+
+👉 How much extra memory the algorithm uses as input size grows.
    
    ===Arrays====
    -> An array is a data structure that can hold a collection of values

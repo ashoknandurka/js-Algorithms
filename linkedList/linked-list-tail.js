@@ -1,113 +1,111 @@
-
 class Node {
-    constructor(value){
-        this.value = value;
-        this.next = null;
-    }
+  constructor(value) {
+    this.value = value;
+    this.next = null;
+  }
 }
 
 class LinkedList {
-    constructor() {
-        this.head = null;
-        this.tail = null;
-        this.size = 0;
+  constructor() {
+    this.head = null;
+    this.tail = null;
+    this.size = 0;
+  }
+
+  isEmpty() {
+    return this.size === 0;
+  }
+
+  getSize() {
+    return this.size;
+  }
+
+  prepend(value) {
+    const node = new Node(value);
+
+    if (this.isEmpty()) {
+      this.head = node;
+      this.tail = node;
+    } else {
+      node.next = this.head;
+      this.head = node;
     }
+    this.size++;
+  }
 
-    isEmpty(){
-        return this.size === 0;
+  append(value) {
+    const node = new Node(value);
+    if (this.isEmpty()) {
+      this.head = node;
+      this.tail = node;
+    } else {
+      this.tail.next = node;
+      this.tail = node;
     }
+    this.size++;
+  }
 
-    getSize(){
-        return this.size;
+  removeFromFront() {
+    if (this.isEmpty()) {
+      return null;
     }
+    const value = this.head.value;
+    this.head = this.head.next;
+    this.size--;
+    return value;
+  }
 
-    prepend(value){
-        const node = new Node(value)
-
-        if(this.isEmpty()){
-            this.head = node;
-            this.tail = node;
-        } else {
-            node.next = this.head;
-            this.head = node;
-        }
-        this.size++;
+  removeFromEnd() {
+    if (this.isEmpty()) {
+      return null;
     }
+    const value = this.tail.value;
 
-    append(value){
-        const node = new Node(value)
-        if(this.isEmpty()){
-            this.head = node;
-            this.tail = node;
-        } else {
-        this.tail.next = node;
-        this.tail = node;
-        }
-        this.size++;
+    if (this.size === 1) {
+      this.head = null;
+      this.tail = null;
+    } else {
+      let prev = this.head;
+
+      while (prev.next !== this.tail) {
+        prev = prev.next;
+      }
+      prev.next = null;
+      this.tail = prev;
     }
+    this.size--;
+    return value;
+  }
 
-    removeFromFront(){
-        if(this.isEmpty()){
-            return null
-        }
-        const value = this.head.value
-        this.head = this.head.next;
-        this.size--;
-        return value;
+  reverse() {
+    let curr = this.head;
+    let prev = null;
+    while (curr) {
+      let next = curr.next;
+      curr.next = prev;
+      prev = curr;
+      curr = next;
     }
+    this.tail = this.head;
+    this.head = prev;
+  }
 
-    removeFromEnd(){
-        if(this.isEmpty()){
-            return null;
-        }
-        const value = this.tail.value;
-
-        if(this.size === 1){
-            this.head = null;
-            this.tail = null;
-        } else {
-            let prev = this.head
-
-            while(prev.next !== this.tail){
-                prev = prev.next
-            }
-            prev.next = null;
-            this.tail = prev;
-        }
-        this.size--;
-        return value
+  print() {
+    if (this.isEmpty()) {
+      console.log("list is empty");
+    } else {
+      let curr = this.head;
+      let list = "";
+      while (curr) {
+        list += `${curr.value}->`;
+        curr = curr.next;
+      }
+      console.log(list);
     }
-
-    reverse(){
-        let curr = this.head;
-        let prev = null;
-        let next = null;
-        while(curr){
-            next = curr.next;
-            curr.next = prev;
-            prev = curr;
-            curr = next;
-        }
-        this.tail = this.head;
-        this.head = prev;
-    }
-
-    print(){
-        if(this.isEmpty()){
-            console.log("list is empty")
-        } else {
-            let curr = this.head
-            let list = ''
-            while(curr){
-                list += `${curr.value}->`;
-                curr = curr.next
-            }
-            console.log(list)
-        }
-    }
+  }
 }
 
-module.exports = LinkedList
+module.exports = LinkedList;
 
 // const list = new LinkedList();
 // list.append(1);
@@ -118,5 +116,6 @@ module.exports = LinkedList
 // console.log(list.getSize());
 // list.removeFromFront();
 // list.print();
-// list.removeFromEnd();
+//list.removeFromEnd();
+// list.reverse();
 // list.print();

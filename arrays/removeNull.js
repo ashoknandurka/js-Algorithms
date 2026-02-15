@@ -3,6 +3,8 @@ function removeNull(arr) {
   arr.forEach((element) => {
     if (Array.isArray(element)) {
       result.push(removeNull(element));
+      // const cleaned = removeNull(el);  if we have [[null],[null]] i will keeps [[],[]] otherwise
+      // if (cleaned.length) result.push(cleaned);
     } else if (element !== null) {
       result.push(element);
     }
@@ -25,3 +27,5 @@ console.log(removeNull(arr));
 
 // remove null preserving the structure
 // what is time and space complexity
+// Time Complexity = O(n)
+//Space Complexity = O(n)
